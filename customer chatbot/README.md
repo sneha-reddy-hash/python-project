@@ -1,124 +1,175 @@
-# 📁 File Organizer Automation System
+# 🤖 DathBot – Rule-Based Customer Support Chatbot
 
 ## 📌 Project Overview
 
-The **File Organizer Automation System** is a Python-based application that automatically organizes files into different folders based on their file extensions.
+**DathBot** is a Python-based Rule-Based Customer Support Chatbot designed to answer common customer queries automatically. It uses predefined keywords and rules to identify user questions and generate appropriate responses.
 
-It helps users maintain a clean and organized directory by sorting files into categories such as Documents, Images, Videos, Audio, Archives, Code, Installers, and Others.
+The chatbot provides information about business hours, products, pricing, delivery, returns, refunds, and customer support.
 
-The application also includes logging functionality to track file movements, errors, and completed operations.
+It also supports greeting detection, goodbye messages, and a help command to improve the user experience.
+
+## 🎯 Objectives
+
+- Automate basic customer support.
+- Provide instant responses to frequently asked questions.
+- Identify user queries using keyword matching.
+- Reduce manual customer support work.
+- Maintain a simple and interactive conversation.
 
 ## ✨ Features
 
-- **Automatic File Organization:** Organizes files based on their extensions.
-- **Documents:** Sorts PDF, DOCX, TXT, PPTX, XLSX, and CSV files.
-- **Images:** Organizes JPG, PNG, GIF, SVG, and other image files.
-- **Videos:** Sorts MP4, MKV, AVI, MOV, and WMV files.
-- **Audio:** Organizes MP3, WAV, AAC, FLAC, and OGG files.
-- **Archives:** Sorts ZIP, RAR, 7Z, TAR, and GZ files.
-- **Code Files:** Organizes Python, Java, C, C++, HTML, CSS, JavaScript, and SQL files.
-- **Installers:** Sorts EXE, MSI, APK, and DEB files.
-- **Duplicate File Protection:** Prevents overwriting files with the same name.
-- **Error Handling:** Handles file operation errors.
-- **Logging:** Records file movements and errors in a log file.
-- **Final Report:** Displays the number of moved, failed, and skipped files.
+- **Greeting Detection:** Responds to greetings such as Hi, Hello, and Hey.
+- **Business Hours:** Provides business opening and closing timings.
+- **Product Information:** Answers questions about available products and services.
+- **Pricing Information:** Responds to product price-related queries.
+- **Delivery Information:** Provides delivery and tracking guidance.
+- **Return and Refund Support:** Gives information about returns and exchanges.
+- **Contact Support:** Guides customers to the official contact page.
+- **Help Command:** Displays available chatbot topics.
+- **Goodbye Detection:** Ends the conversation properly.
+- **JSON Data Storage:** Saves and loads FAQ information using a JSON file.
+- **Error Handling:** Handles unexpected errors without immediately terminating the chatbot.
 
 ## 🛠️ Technologies Used
 
-- Python 3
-- OS Module
-- Shutil Module
-- Logging Module
-- Pathlib Module
-- Datetime Module
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| re | Regular expression and keyword matching |
+| JSON | FAQ data storage |
+| datetime | Time-based greetings |
+| VS Code | Development environment |
 
 ## 📂 Project Structure
 
 ```text
-File-Organizer/
+DathBot/
 │
-├── main.py
-├── organizer.log
+├── chatbot.py
+├── faq_dataset.json
 └── README.md
 ```
 
-**Note:** The `organizer.log` file is generated automatically when the application runs.
+**File Description:**
 
-## ⚙️ Installation and Setup
+- `chatbot.py` – Contains the complete chatbot implementation.
+- `faq_dataset.json` – Stores frequently asked questions and responses.
+- `README.md` – Contains project documentation and instructions.
+
+*Note: The JSON file is automatically created when it does not already exist.*
+
+## ⚙️ How to Run the Project
 
 ### Step 1: Install Python
 
-Download and install Python 3:
+Download and install Python from:
 
 https://www.python.org/downloads/
 
-### Step 2: Clone the Repository
+### Step 2: Open VS Code
+
+Open Visual Studio Code and create a folder named `DathBot`.
+
+### Step 3: Create Python File
+
+Create a file named:
+
+`chatbot.py`
+
+Copy and paste the chatbot source code into this file.
+
+### Step 4: Open Terminal
+
+In VS Code, select:
+
+Terminal → New Terminal
+
+### Step 5: Run the Program
+
+Execute the following command:
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+python chatbot.py
 ```
 
-### Step 3: Open the Project
+### Step 6: Start Chatting
 
-Open the project folder in Visual Studio Code.
+Enter your questions and receive automatic responses from DathBot.
 
-### Step 4: Run the Application
-
-Open the terminal and execute:
-
-```bash
-python main.py
-```
-
-### Step 5: Enter Folder Path
-
-When prompted, enter the folder path you want to organize.
-
-Example:
+## 💬 Sample Output
 
 ```text
-Enter the folder path to organize:
-C:\Users\YourName\Downloads
+=======================================================
+Welcome to DathBot!
+Your Rule-Based Customer Support Assistant
+=======================================================
+Type 'help' to see available topics.
+Type 'bye', 'exit', or 'quit' to end the chat.
+
+You: Hello
+
+Bot: Good afternoon! I'm DathBot,
+your customer support assistant.
+
+You: What are your business hours?
+
+Bot: Our business hours are Monday to Saturday,
+9:00 AM to 6:00 PM.
+
+You: What products are available?
+
+Bot: We offer a range of products and services.
+Please specify the product you are interested in.
+
+You: Thank you
+
+Bot: You're welcome! I'm happy to help.
+
+You: bye
+
+Bot: Thank you for chatting with me. Goodbye!
 ```
 
-**Tip:** Test the application using a sample folder first. It moves files into category folders inside the selected directory.
+## 🧠 Python Concepts Used
 
-## 📊 File Categories
-
-| Category | File Extensions |
-|---|---|
-| Documents | PDF, DOCX, TXT, PPTX, XLSX, CSV |
-| Images | JPG, PNG, GIF, SVG, WEBP |
-| Videos | MP4, MKV, AVI, MOV |
-| Audio | MP3, WAV, AAC, FLAC |
-| Archives | ZIP, RAR, 7Z, TAR |
-| Code | PY, JAVA, C, CPP, HTML, CSS, JS |
-| Installers | EXE, MSI, APK, DEB |
-| Others | Unrecognized extensions |
-
-## 🎯 Learning Outcomes
-
-- Understanding Python file handling.
-- Learning directory management using OS and Pathlib.
-- Working with file movement using Shutil.
-- Implementing exception handling.
-- Understanding logging functionality.
-- Automating repetitive file management tasks.
-- Developing a practical Python automation project.
+1. **Functions:** Divides the program into reusable functions.
+2. **Dictionaries:** Stores FAQ questions, keywords, and responses.
+3. **Lists:** Maintains keywords and identified intents.
+4. **Conditional Statements:** Selects appropriate responses.
+5. **Loops:** Maintains continuous chatbot interaction.
+6. **Regular Expressions:** Identifies keywords and greetings.
+7. **Exception Handling:** Handles errors using try-except.
+8. **File Handling:** Reads and writes JSON files.
+9. **String Manipulation:** Normalizes user input.
+10. **Date and Time:** Generates time-based greetings.
 
 ## 🚀 Future Enhancements
 
-- Create a graphical user interface (GUI).
-- Add file search functionality.
-- Support automatic folder monitoring.
-- Add custom file categories.
-- Generate detailed organization reports.
-- Add an undo option for file movements.
+- Add a graphical user interface (GUI).
+- Integrate a database to store customer conversations.
+- Add voice-based interaction.
+- Support multiple languages.
+- Integrate AI and Natural Language Processing (NLP).
+- Develop a web-based customer support chatbot.
 
-## 👩‍💻 Author
+## 🎓 Learning Outcomes
+
+Through this project, I learned how to:
+
+- Develop a rule-based chatbot using Python.
+- Implement keyword-based intent recognition.
+- Work with JSON files for data storage.
+- Handle user input and generate responses.
+- Apply exception handling and modular programming.
+
+## 👨‍💻 Author
 
 **Sneha Reddy Madduri**
 
 ## 📄 License
 
-This project is developed for educational and learning purposes.
+This project is created for educational and learning purposes.
+
+---
+
+⭐ If you find this project useful, feel free to star the repository!
